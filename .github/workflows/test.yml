@@ -1,0 +1,29 @@
+name: "Dummy"
+
+on:
+  workflow_dispatch:
+    inputs:
+      sleep_time:
+        description: "sleep for"
+        default: 60
+      runner_label:
+        description: "runner label"
+        default: ubuntu
+
+jobs:
+  dummy:
+    name: "Do nothing, really"
+
+    runs-on:
+      - self-hosted
+      - "${{ github.event.inputs.runner_label }}"
+
+    steps:
+      - name: "Just print some info"
+        shell: bash
+        run: |
+          hostname
+          uname -a
+          df -h
+          whoami
+          sleep ${{ github.event.inputs.sleep_time }}
