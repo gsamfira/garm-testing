@@ -15,7 +15,6 @@ jobs:
     name: "Do nothing, really"
 
     runs-on:
-      - self-hosted
       - "${{ github.event.inputs.runner_label }}"
 
     steps:
