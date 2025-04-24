@@ -26,3 +26,64 @@ jobs:
           df -h
           whoami
           sleep ${{ github.event.inputs.sleep_time }}
+  dummy2:
+    name: "Do nothing, really"
+
+    runs-on:
+      - "${{ github.event.inputs.scale_set }}"
+
+    steps:
+      - name: "Just print some info"
+        shell: bash
+        run: |
+          hostname
+          uname -a
+          df -h
+          whoami
+          sleep ${{ github.event.inputs.sleep_time }}
+  dummy3:
+    name: "Do nothing, really"
+
+    runs-on:
+      - "${{ github.event.inputs.scale_set }}"
+
+    steps:
+      - name: "Just print some info"
+        shell: bash
+        run: |
+          hostname
+          uname -a
+          df -h
+          whoami
+          sleep ${{ github.event.inputs.sleep_time }}
+  dummy4:
+    name: "Do nothing, really"
+
+    runs-on:
+      - "${{ github.event.inputs.scale_set }}"
+
+    steps:
+      - name: "Just print some info"
+        shell: bash
+        run: |
+          hostname
+          uname -a
+          df -h
+          whoami
+          sleep ${{ github.event.inputs.sleep_time }}
+  dummy5:
+    name: "Do nothing, really"
+
+    runs-on:
+      - "${{ github.event.inputs.scale_set }}"
+
+    steps:
+      - name: "Just print some info"
+        shell: bash
+        run: |
+          hostname
+          uname -a
+          df -h
+          whoami
+          sleep ${{ github.event.inputs.sleep_time }}
+
