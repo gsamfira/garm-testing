@@ -1,0 +1,29 @@
+name: "Dummy scale Set"
+
+on:
+  workflow_dispatch:
+    inputs:
+      scale_set:
+        description: "scale set name"
+        default: test-scale-set
+
+jobs:
+  dummy:
+    name: "Do nothing, really"
+
+    runs-on: "${{ github.event.inputs.scale_set }}"
+    container:
+      image: node:18
+      env:
+        NODE_ENV: development
+
+    steps:
+      - name: "Just print some info"
+        shell: bash
+        run: |
+          hostname
+          uname -a
+          df -h
+          whoami
+      - name: Check for dockerenv file
+        run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
