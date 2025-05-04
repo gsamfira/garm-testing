@@ -1,4 +1,4 @@
-name: "Dummy scale Set"
+name: "Dummy scale Set - container"
 
 on:
   workflow_dispatch:
