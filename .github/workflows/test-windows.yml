@@ -1,0 +1,26 @@
+name: "Dummy - windows"
+
+on:
+  workflow_dispatch:
+    inputs:
+      sleep_time:
+        description: "sleep for"
+        default: 60
+      runner_label:
+        description: "runner label"
+        default: windows
+
+jobs:
+  dummy:
+    name: "Do nothing, really"
+
+    runs-on:
+      - "${{ github.event.inputs.runner_label }}"
+
+    steps:
+      - name: "Just print some info"
+        shell: powershell
+        run: |
+          hostname
+          whoami
+          Start-Sleep ${{ github.event.inputs.sleep_time }}
