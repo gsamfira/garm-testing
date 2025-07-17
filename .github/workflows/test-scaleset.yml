@@ -9,13 +9,17 @@ on:
       scale_set:
         description: "scale set name"
         default: test-scale-set
+      runner_group:
+        description: "runner group name"
+        default: Default
 
 jobs:
   dummy:
     name: "Do nothing, really"
 
     runs-on:
-      - "${{ github.event.inputs.scale_set }}"
+      labels: "${{ github.event.inputs.scale_set }}"
+      group: "${{ github.event.inputs.runner_group }}"
 
     steps:
       - name: "Just print some info"
