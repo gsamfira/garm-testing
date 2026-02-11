@@ -19,7 +19,6 @@ jobs:
 
     runs-on:
       labels: "${{ github.event.inputs.scale_set }}"
-      group: "${{ github.event.inputs.runner_group }}"
 
     steps:
       - name: "Just print some info"
